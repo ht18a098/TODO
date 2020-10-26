@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}To-Do List | Add{% endblock %}
+{% block content %}
+    {% if item %}
+        {{ item.item }}
+        <form class="form-inline my-2 my-lg-0" method="POST">
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" type="search" placeholder="TO-DO Item" aria-label="Search" name="item">
+        </form>
+    {% endif %}
+
+{% endblock %}
